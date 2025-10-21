@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Jarl - Juego Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        #gameCanvas {
+            border: 3px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            display: block;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 25px;
+            border: 2px solid #ff0000;
+            border-radius: 5px;
+            font-size: 16px;
+            z-index: 100;
+            text-align: center;
+            color: #fff;
+        }
+
+        .controls .key {
+            display: inline-block;
+            background: #333;
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 3px;
+            color: #00ff00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="850" height="480"></canvas>
+
+    <div class="controls">
+        <span class="key">← →</span> Mover
+        <span class="key">ESPACIO</span> Saltar
+        <span class="key">X</span> Disparar
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

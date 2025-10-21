@@ -1,0 +1,184 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                     🎮 EL JARL - VERSIÓN WEB LISTA 🎮                      ║
+║                                                                            ║
+║                    ¡Tu juego ahora funciona en navegador!                  ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📁 ESTRUCTURA DEL PROYECTO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Videojuego/
+├── 📄 index.html                ← PÁGINA PRINCIPAL DEL JUEGO
+├── 📁 js/
+│   ├── main.js                  ← Lógica del juego (Phaser.js)
+│   └── config.js                ← Configuración personalizable
+├── 📄 server.py                 ← Servidor web Python
+├── 📄 run_server.bat            ← Atajo rápido para Windows
+├── 📁 img/                      ← Imágenes (tus archivos originales)
+├── 📁 sounds/                   ← Audio (tu música original)
+├── 📚 README.md                 ← Documentación completa
+├── 📚 GUIA_COMPLETA.md          ← Guía detallada de uso
+└── 📚 INICIO_RAPIDO.md          ← Troubleshooting rápido
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 PARA JUGAR AHORA MISMO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPCIÓN 1 - LA MÁS FÁCIL (Windows):
+  1. Haz doble clic en: run_server.bat
+  2. Se abre automáticamente en tu navegador
+  3. Presiona ENTER para comenzar
+  4. ¡A jugar! 🎮
+
+OPCIÓN 2 - Por terminal:
+  PowerShell: python server.py
+  Terminal: python -m http.server 8000
+  Luego abre: http://localhost:8000
+
+OPCIÓN 3 - Con npm:
+  npm install
+  npm start
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎮 CONTROLES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ⬅️  FLECHA IZQUIERDA       → Mover izquierda
+  ➡️  FLECHA DERECHA         → Mover derecha
+  ⬆️  ESPACIO                → Saltar
+  🔫 X                        → Disparar martillo
+  ▶️  ENTER                  → Comenzar juego
+  🔄 R                        → Reintentar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 NIVELES Y ENEMIGOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Nivel 1  →  Robodog      Salud: 100    Daño: 10
+  Nivel 2  →  Robodog      Salud: 100    Daño: 10
+  Nivel 3  →  Robot        Salud: 100    Daño: 15
+  Nivel 4  →  Robodog      Salud: 120    Daño: 10
+  Nivel 5  →  Robot        Salud: 120    Daño: 15
+  Nivel 6  →  🔥 JEFE 🔥   Salud: 350    Daño: 25
+
+  ¡Derrota a todos para ganar! 👑
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 DESPLEGAR EN INTERNET (GRATIS):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  NETLIFY (Lo más fácil):
+  1. Ve a: https://app.netlify.com/drop
+  2. Crea un ZIP de tu proyecto
+  3. Arrastra el ZIP a la página
+  4. ¡Tu juego está en vivo en segundos! ⚡
+
+  GITHUB + NETLIFY (Automático):
+  1. Sube a GitHub
+  2. Conecta con Netlify
+  3. Netlify deployará automáticamente 🚀
+
+  VERCEL:
+  npm install -g vercel
+  vercel
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 PERSONALIZACIÓN:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Cambiar dificultad:
+  ├─ Edita: js/config.js
+  ├─ Parámetros: enemyHealth, enemyDamage, enemySpeed
+  └─ Guarda y recarga la página
+
+  Cambiar controles:
+  ├─ Edita: js/config.js → controls
+  └─ Guarda y recarga
+
+  Cambiar velocidad del jugador:
+  ├─ Edita: js/config.js → player.speed
+  └─ Aumenta para más rápido
+
+  Ver más en: GUIA_COMPLETA.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ CAMBIOS REALIZADOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ✅ Reescrito en JavaScript/Phaser.js
+  ✅ Funciona en navegador (sin pygame)
+  ✅ Mantiene toda la lógica del original
+  ✅ Reutiliza tus imágenes y sonido
+  ✅ Interfaz mejorada con estilos retro
+  ✅ Barras de salud visuales
+  ✅ 3 escenas: Intro, Juego, Game Over
+  ✅ Sistema de puntuación mejorado
+  ✅ Totalmente compatible con Netlify
+  ✅ Python disponible en el backend si lo necesitas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTACIÓN DISPONIBLE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 README.md          → Documentación oficial completa
+  🚀 INICIO_RAPIDO.md   → Para empezar rápidamente
+  📚 GUIA_COMPLETA.md   → Guía detallada de personalización
+  ⚙️  js/config.js      → Configuración del juego
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎓 TECNOLOGÍAS USADAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  🔹 Phaser 3.55     → Motor de juegos para 2D
+  🔹 JavaScript ES6+ → Lenguaje del navegador
+  🔹 HTML5 Canvas    → Renderizado de gráficos
+  🔹 Python 3        → Servidor (opcional)
+  🔹 Netlify         → Para desplegar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ PREGUNTAS FRECUENTES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ¿Puedo seguir usando Python?
+  → Sí, el archivo juego.py sigue disponible. También puedes
+    integrar Python como backend si necesitas base de datos.
+
+  ¿Funciona en móviles?
+  → Sí, en navegador del móvil. Los controles pueden mejorarse
+    con botones táctiles (puedo agregarlos si quieres).
+
+  ¿Qué navegadores funcionan?
+  → Chrome, Firefox, Safari, Edge (cualquier navegador moderno).
+
+  ¿Puedo modificar el juego?
+  → Claro, todo es personalizable. Ve GUIA_COMPLETA.md
+
+  ¿Es difícil desplegar?
+  → No, Netlify es muy simple (arrastra y suelta).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ SIGUIENTE PASO:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Abre: run_server.bat (o ejecuta python server.py)
+  2. Espera que se abra tu navegador
+  3. Presiona ENTER para jugar
+  4. ¡Disfruta! 🎮
+
+  PROBLEMAS? Ver INICIO_RAPIDO.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+                           ¡Que lo disfrutes! 🚀
+
+╚════════════════════════════════════════════════════════════════════════════╝

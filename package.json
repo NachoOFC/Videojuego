@@ -1,0 +1,23 @@
+{
+  "name": "el-jarl-web",
+  "version": "1.0.0",
+  "description": "El Jarl - Juego web con Phaser.js",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000 -c-1",
+    "dev": "http-server -p 8000 -c-1 --watch",
+    "build": "echo 'No build needed for static site'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "keywords": [
+    "phaser",
+    "juego",
+    "arcade",
+    "2d"
+  ]
+}
