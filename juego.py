@@ -430,8 +430,9 @@ def repintar_cuadro_juego():
 	# Dibujar Héroe
 	heroe.dibujar(ventana)
 
-	# Dibujar Villano
-	villanos[nivel].dibujar(ventana)
+	# Dibujar Villano (solo si el nivel es válido)
+	if nivel < len(villanos):
+		villanos[nivel].dibujar(ventana)
 
 	# Dibujar Balas
 	for bala in balas:
@@ -462,14 +463,16 @@ def subir_nivel():
 	texto = pygame.font.SysFont('comicsans', 100)
 	marcador = texto.render('Subes de nivel!', 1, (255,0,0))
 
-	if villanos[nivel] == villanos[2]:
-		lvl+=1
-		ventana.blit(marcador, (250 - (marcador.get_width()//3), 200))
-	
-	if villanos[nivel] == villanos[5]:
-		lvl+=1
-		ventana.blit(marcador, (250 - (marcador.get_width()//3), 200))
+	# Verificar que el nivel no exceda la cantidad de villanos
+	if nivel < len(villanos):
+		if villanos[nivel] == villanos[2]:
+			lvl+=1
+			ventana.blit(marcador, (250 - (marcador.get_width()//3), 200))
 		
+		if villanos[nivel] == villanos[5]:
+			lvl+=1
+			ventana.blit(marcador, (250 - (marcador.get_width()//3), 200))
+	
 	pygame.display.update()
 	pygame.time.delay(0)
 
@@ -494,7 +497,7 @@ repetir = True
 while repetir:
 	# Inicializacion de elementos del juego
 	nivel = 0
-	nivel_maximo = 5
+	# nivel_maximo ya está definido basado en la cantidad de villanos
 	imagen_fondo = [pygame.image.load('img/fondobasico.jpg'), pygame.image.load('img/fondobasico.jpg'), pygame.image.load('img/fondobasico.jpg'), pygame.image.load('img/fondobasico.jpg'), pygame.image.load('img/fondobasico.jpg'),pygame.image.load('img/fondobasico.jpg'),pygame.image.load('img/fondobasico.jpg')]
 	ruta_musica = ["sounds/music.mp3", "sounds/music.mp3", "sounds/music.mp3", "sounds/music.mp3", "sounds/music.mp3", "sounds/music.mp3", "sounds/music.mp3"]
 	musica_fondo = pygame.mixer.music.load(ruta_musica[nivel])
@@ -522,8 +525,9 @@ while repetir:
 	# Variables Balas
 	tanda_disparos = 0
 	balas = []
-
-	# Seccion de intro
+	
+	# Establecer el nivel máximo basado en la cantidad de villanos
+	nivel_maximo = len(villanos) - 1
 	while esta_en_intro:
 		# control de velocidad del juego
 		reloj.tick(27)
@@ -604,9 +608,10 @@ while repetir:
 			tanda_disparos = 1
 
 		# Consulta para saber si se sube de nivel o no
-		if villanos[nivel].salud <= 0:
+		if nivel < len(villanos) and villanos[nivel].salud <= 0:
 			subir_nivel()
-			puntaje += villanos[nivel].puntos
+			if nivel < len(villanos):
+				puntaje += villanos[nivel].puntos
 		# Consulta para ver si pierde
 		if heroe.salud < 1:
 			esta_jugando = False
