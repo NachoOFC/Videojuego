@@ -186,3 +186,5 @@ Si tienes dudas o problemas:
 3. Asegúrate de que el servidor está corriendo en `localhost:8000`
 
 ¡Que disfrutes el juego! 🎮
+
+eliminando migracion pnpm
