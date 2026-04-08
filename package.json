@@ -13,7 +13,7 @@
   "devDependencies": {
     "http-server": "^14.1.1"
   },
-  "author": "Tu Nombre",
+  "author": "Nacho OFC",
   "license": "MIT",
   "keywords": [
     "phaser",
